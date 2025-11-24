@@ -13,18 +13,18 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Red 500: hsl(1, 90%, 64%)
-- Blue 950: hsl(219, 85%, 26%)
+- Purple 600: hsl(238, 40%, 52%)
+- Pink 400: hsl(358, 79%, 66%)
+- Purple 200: hsl(239, 57%, 85%)
+- Pink 200: hsl(357, 100%, 86%)
 
 ### Neutral
 
+- Grey 800: hsl(212, 24%, 26%)
+- Grey 500: hsl(211, 10%, 45%)
+- Grey 100: hsl(223, 19%, 93%)
+- Grey 50: hsl(228, 33%, 97%)
 - White: hsl(0, 100%, 100%)
-- Navy 50: hsl(210, 60%, 98%)
-- Blue 100: hsl(211, 68%, 94%)
-- Navy 100: hsl(205, 33%, 90%)
-- Gray 500: hsl(219, 14%, 63%)
-- Gray 600: hsl(219, 12%, 42%)
-- Navy 950: hsl(224, 21%, 14%)
 
 ## Typography
 
@@ -34,7 +34,7 @@ The designs were created to the following widths:
 
 ### Font
 
-- Family: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
-- Weights: 500, 800
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 400, 500, 700
 
 > 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.
