@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react"
+import AddComment from "./components/AddComment"
+import CommentComp from "./components/CommentComp"
 
-function App() {
-  const [count, setCount] = useState(0)
+export type CurrentUser = {
+  image: {
+    png: string,
+    webp: string
+  },
+  username: string
+}
+
+export type Comment = {
+  content: string,
+  createdAt: string,
+  id: number,
+  replies?: Comment[],
+  score: number,
+  user: CurrentUser
+}
+
+const App = () => {
+  const [currentUser, setCurrentUser] = useState<CurrentUser>()
+  const [comments, setComments] = useState<Comment[]>([])
+  useEffect(()=>{
+    fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+      setCurrentUser(data.currentUser)
+      setComments(data.comments)
+    })
+  },[])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="mainWrapper">
+      {comments.map(comment => 
+        <CommentComp {...comment} />
+      )}
+
+      {currentUser && <AddComment {...currentUser} />}
+    </div>
   )
 }
 
